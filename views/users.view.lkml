@@ -14,15 +14,15 @@ view: users {
     type: number
     sql: ${TABLE}.age ;;
   }
-  dimension: city {
-    type: string
-    sql: ${TABLE}.city ;;
-  }
-  dimension: country {
-    type: string
-    map_layer_name: countries
-    sql: ${TABLE}.country ;;
-  }
+  # dimension: city {
+  #   type: string
+  #   sql: ${TABLE}.city ;;
+  # }
+  # dimension: country {
+  #   type: string
+  #   map_layer_name: countries
+  #   sql: ${TABLE}.country ;;
+  # }
   dimension_group: created {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
@@ -56,10 +56,10 @@ view: users {
     type: string
     sql: ${TABLE}.postal_code ;;
   }
-  dimension: state {
-    type: string
-    sql: ${TABLE}.state ;;
-  }
+  # dimension: state {
+  #   type: string
+  #   sql: ${TABLE}.state ;;
+  # }
   dimension: street_address {
     type: string
     sql: ${TABLE}.street_address ;;
