@@ -1,6 +1,10 @@
+include: "geography_dimensions.view"
+
 view: events {
   sql_table_name: `ecommerce.events` ;;
   drill_fields: [id]
+
+  extends: [geography_dimensions]
 
   dimension: id {
     primary_key: yes
