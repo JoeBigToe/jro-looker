@@ -1,7 +1,10 @@
+include: "geography_dimensions.view"
+
 view: users {
   sql_table_name: `ecommerce.users` ;;
   drill_fields: [id]
 
+  extends: [geography_dimensions]
   dimension: id {
     primary_key: yes
     type: number
