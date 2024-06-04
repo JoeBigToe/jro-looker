@@ -6,6 +6,6 @@ remote_dependency: ga360_block {
 }
 
 remote_dependency: api_explorer {
-  url: "https://github.com/looker-open-source/extension-api-explorer"
+  url: "https://github.com/looker-open-source/extension-api-explorer.git"
   ref: "main"
 }
