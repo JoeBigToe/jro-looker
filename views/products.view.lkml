@@ -10,6 +10,10 @@ view: products {
   dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;
+    link: {
+      label: "Go to {{value}}"
+      url: "https://www.google.com/search?q={{value}}"
+    }
   }
   dimension: category {
     type: string
@@ -22,6 +26,7 @@ view: products {
   dimension: department {
     type: string
     sql: ${TABLE}.department ;;
+    drill_fields: [brand, category]
   }
   dimension: distribution_center_id {
     type: number
@@ -42,19 +47,20 @@ view: products {
   }
   measure: count {
     type: count
-    drill_fields: [detail*]
+    # drill_fields: [detail*]
+    drill_fields: [category, department, count]
   }
 
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	name,
-	distribution_centers.name,
-	distribution_centers.id,
-	order_items.count,
-	inventory_items.count
-	]
+      id,
+      name,
+      distribution_centers.name,
+      distribution_centers.id,
+      order_items.count,
+      inventory_items.count
+    ]
   }
 
 }
